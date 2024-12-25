@@ -25,12 +25,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       backgroundColor: Colors.green,
-      leading: showBackButton
-          ? IconButton(
-              icon: const Icon(Icons.arrow_back_outlined, color: Colors.white),
-              onPressed: onBackPressed ?? () => Navigator.of(context).pop(),
-            )
-          : null,
       elevation: 4,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(

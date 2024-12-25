@@ -14,6 +14,25 @@ class DatabaseMethods {
     return FirebaseFirestore.instance.collection('Employee').snapshots();
   }
 
+  // Fetch employee details by ID
+  Future<Map<String, dynamic>> getEmployeeById(String empId) async {
+    try {
+      var docSnapshot = await FirebaseFirestore.instance
+          .collection('Employee')
+          .doc(empId)
+          .get();
+
+      if (docSnapshot.exists) {
+        return docSnapshot.data() as Map<String, dynamic>;
+      } else {
+        throw Exception("Employee with ID $empId not found.");
+      }
+    } catch (e) {
+      print("Error fetching employee: $e");
+      throw e;
+    }
+  }
+
   // Delete an employee based on employee ID
   Future deleteEmployee(String empId) async {
     try {

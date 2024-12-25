@@ -1,5 +1,7 @@
 import 'package:doctorapp/common%20widgets/custom_appbar.dart';
+import 'package:doctorapp/common%20widgets/drawer.dart';
 import 'package:doctorapp/pages/add_employee.dart';
+import 'package:doctorapp/pages/update_employee.dart';
 import 'package:doctorapp/provider/theme_provider.dart';
 import 'package:doctorapp/services/database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -43,22 +45,22 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // Function to update an employee's data
-  void updateEmployeeData(String empId) async {
-    // Define the updated employee data
-    Map<String, dynamic> updatedData = {
-      "name": "Updated Kartik Doe",
-      "position": "Senior Software Engineer",
-      "age": 31, // Example of an updated field
-    };
+  // // Function to update an employee's data
+  // void updateEmployeeData(String empId) async {
+  //   // Define the updated employee data
+  //   Map<String, dynamic> updatedData = {
+  //     "name": "Updated Kartik Doe",
+  //     "position": "Senior Software Engineer",
+  //     "age": 31, // Example of an updated field
+  //   };
 
-    try {
-      await databaseMethods.updateEmployee(updatedData, empId);
-      print("Employee with ID $empId updated successfully.");
-    } catch (e) {
-      print("Error updating employee: $e");
-    }
-  }
+  //   try {
+  //     await databaseMethods.updateEmployee(updatedData, empId);
+  //     print("Employee with ID $empId updated successfully.");
+  //   } catch (e) {
+  //     print("Error updating employee: $e");
+  //   }
+  // }
 
   @override
   void initState() {
@@ -73,6 +75,7 @@ class _HomePageState extends State<HomePage> {
     // final authProvider = Provider.of<AuthProvider>(context);
     return Scaffold(
       appBar: const CustomAppBar(title: "EMPLOYEES"),
+      drawer: CustomDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -179,8 +182,13 @@ class _HomePageState extends State<HomePage> {
                                   IconButton(
                                     icon: Icon(Icons.edit, color: Colors.blue),
                                     onPressed: () {
-                                      updateEmployeeData(
-                                          empId); // Call update function
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              settings: RouteSettings(
+                                                  arguments: empId),
+                                              builder: (context) =>
+                                                  UpdateEmployeeFormPage()));
                                     },
                                   ),
                                 ],
