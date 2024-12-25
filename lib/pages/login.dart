@@ -1,9 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:doctorapp/Signup.dart';
-import 'package:doctorapp/forgot_password.dart';
-import 'package:doctorapp/homepage.dart';
-import 'package:doctorapp/services/auth.dart';
+import 'package:doctorapp/pages/Signup.dart';
+import 'package:doctorapp/pages/forgot_password.dart';
+import 'package:doctorapp/pages/homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +49,6 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.white,
       body: Container(
         child: Column(
@@ -71,8 +69,8 @@ class _LogInState extends State<LogIn> {
                 child: Column(
                   children: [
                     Container(
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 2.0, horizontal: 30.0),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 2.0, horizontal: 30.0),
                       decoration: BoxDecoration(
                           color: const Color(0xFFedf0f8),
                           borderRadius: BorderRadius.circular(30)),
@@ -95,8 +93,8 @@ class _LogInState extends State<LogIn> {
                       height: 30.0,
                     ),
                     Container(
-                      padding:
-                          const EdgeInsets.symmetric(vertical: 2.0, horizontal: 30.0),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 2.0, horizontal: 30.0),
                       decoration: BoxDecoration(
                           color: const Color(0xFFedf0f8),
                           borderRadius: BorderRadius.circular(30)),
@@ -154,8 +152,10 @@ class _LogInState extends State<LogIn> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ForgotPassword()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ForgotPassword()));
               },
               child: const Text("Forgot Password?",
                   style: TextStyle(
@@ -213,8 +213,10 @@ class _LogInState extends State<LogIn> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const SignUp()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUp()));
                   },
                   child: const Text(
                     "SignUp",

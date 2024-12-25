@@ -1,5 +1,5 @@
-import 'package:doctorapp/homepage.dart';
-import 'package:doctorapp/login.dart';
+import 'package:doctorapp/pages/homepage.dart';
+import 'package:doctorapp/pages/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
