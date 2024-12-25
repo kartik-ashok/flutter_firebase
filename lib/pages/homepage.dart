@@ -192,37 +192,6 @@ class _HomePageState extends State<HomePage> {
                                   themeProvider.toggleTheme();
                                 },
                               ),
-                              //                           Center(
-                              //     child: Column(
-                              //       mainAxisAlignment: MainAxisAlignment.center,
-                              //       children: [
-                              //         // Theme Toggle
-                              //         Switch(
-                              //           value: themeProvider.isDarkMode,
-                              //           onChanged: (value) {
-                              //             themeProvider.toggleTheme();
-                              //           },
-                              //         ),
-                              //         // Authentication Status
-                              //         // Text(
-                              //         //   authProvider.isAuthenticated ? 'Logged In' : 'Logged Out',
-                              //         //   style: TextStyle(fontSize: 20),
-                              //         // ),
-                              //         // ElevatedButton(
-                              //         //   onPressed: () {
-                              //         //     if (authProvider.isAuthenticated) {
-                              //         //       authProvider.logout();
-                              //         //     } else {
-                              //         //       authProvider.authenticate();
-                              //         //     }
-                              //         //   },
-                              //         //   child: Text(authProvider.isAuthenticated ? 'Logout' : 'Login'),
-                              //         // )
-                              //       ],
-                              //     ),
-                              //   ),
-                              // )
-                              // ----------------
                             ],
                           ),
                         ),
